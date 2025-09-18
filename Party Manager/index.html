@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const character = [
+        { name: "kashiki", role: "assasin", hp: 250 },
+        { name: "shiori", role: "assasin", hp: 200 },
+        { name: "murata", role: "fighter", hp: 400 },
+      ];
+
+      const characterList = character.map(
+        (character) => `${character.name} - ${character.role} - ${character.hp}`
+      );
+
+      console.log(`=== Character List ===`);
+      characterList.forEach((char) => console.log(char));
+
+      console.log(`=== Detailed Character ===`);
+      character.forEach((char) =>
+        console.log(`Character Name : ${char.name}
+Character Role : ${char.role}
+Character HP : ${char.hp}`)
+      );
+
+      console.log(`=== Assasin Character Only ===`);
+      character.filter((char) => {
+        if (char.role === "assasin") {
+          console.log(char.name);
+        }
+      });
+
+      console.log(`=== Your Party HP Total ===`);
+
+      const totalHp = character.reduce((total, char) => total + char.hp, 0);
+
+      console.log(totalHp);
+    </script>
+  </body>
+</html>
